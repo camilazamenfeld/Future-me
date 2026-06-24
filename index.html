@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Me</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- LOGO SVG reutilizable — pequeño para top bar -->
+<svg style="display:none">
+  <symbol id="icon-logo" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="16" r="15" stroke="white" stroke-width="1.6"/>
+    <!-- head -->
+    <circle cx="13.5" cy="10.5" r="3.5" fill="rgba(200,185,245,0.95)"/>
+    <!-- torso -->
+    <path d="M10 14.5 Q9 20 10 25 L17 25 Q18 20 17 14.5 Q15.5 13.5 13.5 13.5 Q11.5 13.5 10 14.5Z" fill="rgba(200,185,245,0.95)"/>
+    <!-- left leg -->
+    <path d="M10.5 24.5 Q10 28 9.5 29.5 L12 29.5 Q12.5 27 13 24.5Z" fill="rgba(200,185,245,0.95)"/>
+    <!-- right leg -->
+    <path d="M14 24.5 Q14.5 27 15 29.5 L17.5 29.5 Q17 28 16.5 24.5Z" fill="rgba(200,185,245,0.95)"/>
+    <!-- left arm down -->
+    <path d="M10.2 15.5 Q8 19 7.5 22 L9 22.5 Q9.5 20 11.5 16.5Z" fill="rgba(200,185,245,0.95)"/>
+    <!-- right arm raised -->
+    <path d="M17 15 Q20 11 22 8 L23.5 9.5 Q21.5 12.5 18.5 16.5Z" fill="rgba(200,185,245,0.95)"/>
+    <!-- star -->
+    <polygon points="24,5 24.8,7.5 27.5,7.5 25.3,9 26.1,11.5 24,10 21.9,11.5 22.7,9 20.5,7.5 23.2,7.5" fill="white"/>
+  </symbol>
+</svg>
+
+  <!-- SCREEN 1: HOME -->
+  <div id="screen-home" class="screen active">
+    <header class="top-bar">
+      <div class="logo-mark">
+        <svg width="30" height="30"><use href="#icon-logo"/></svg>
+        FUTURE ME
+      </div>
+    </header>
+
+    <div class="home-hero">
+      <div class="hero-logo">
+        <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- clip everything inside the main circle -->
+            <clipPath id="circle-clip">
+              <circle cx="80" cy="80" r="70"/>
+            </clipPath>
+          </defs>
+
+          <!-- outer glow ring -->
+          <circle cx="80" cy="80" r="76" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/>
+          <!-- main circle border -->
+          <circle cx="80" cy="80" r="70" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.85)" stroke-width="2.2"/>
+
+          <!-- all person content clipped inside circle -->
+          <g clip-path="url(#circle-clip)">
+
+            <!-- HEAD -->
+            <circle cx="68" cy="58" r="13" fill="rgba(200,182,248,0.95)"/>
+
+            <!-- NECK -->
+            <rect x="63" y="69" width="10" height="8" rx="3" fill="rgba(200,182,248,0.95)"/>
+
+            <!-- TORSO -->
+            <path d="M52 78 Q49 108 52 132 L86 132 Q89 108 86 78 Q79 74 68 74 Q57 74 52 78Z" fill="rgba(185,165,242,0.9)"/>
+
+            <!-- LEFT LEG -->
+            <path d="M55 130 Q52 148 51 158 L60 158 Q61 148 63 130Z" fill="rgba(185,165,242,0.9)"/>
+            <!-- RIGHT LEG -->
+            <path d="M73 130 Q75 148 76 158 L85 158 Q84 148 82 130Z" fill="rgba(185,165,242,0.9)"/>
+
+            <!-- LEFT ARM relaxed down -->
+            <path d="M53 80 Q44 96 41 116 L48 118 Q51 100 58 84Z" fill="rgba(200,182,248,0.9)"/>
+            <!-- left hand -->
+            <ellipse cx="44" cy="118" rx="5" ry="7" transform="rotate(-15 44 118)" fill="rgba(200,182,248,0.9)"/>
+
+            <!-- RIGHT ARM raised toward star -->
+            <path d="M84 80 Q96 62 108 42 L114 46 Q103 66 91 86Z" fill="rgba(200,182,248,0.9)"/>
+            <!-- right hand / fingers reaching -->
+            <ellipse cx="114" cy="44" rx="6" ry="8" transform="rotate(-45 114 44)" fill="rgba(200,182,248,0.9)"/>
+            <path d="M110 37 Q113 31 117 35" stroke="rgba(210,195,250,0.9)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <path d="M115 34 Q118 28 121 33" stroke="rgba(210,195,250,0.9)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+            <!-- HAIR -->
+            <path d="M57 52 Q60 42 68 40 Q76 38 80 50 Q74 46 68 46 Q62 46 57 52Z" fill="rgba(110,70,200,0.65)"/>
+
+            <!-- STAR (top right, inside circle) -->
+            <g transform="translate(118, 30)">
+              <polygon points="0,-20 5,-7 19,-7 8,1 12,15 0,6 -12,15 -8,1 -19,-7 -5,-7" fill="white" opacity="0.97"/>
+            </g>
+
+            <!-- SPARKLES -->
+            <g stroke="white" stroke-linecap="round" fill="none" opacity="0.8">
+              <path d="M34 68 L34 76 M30 72 L38 72" stroke-width="2"/>
+              <path d="M118 70 L118 76 M115 73 L121 73" stroke-width="1.8"/>
+              <path d="M100 20 L100 26 M97 23 L103 23" stroke-width="1.8"/>
+            </g>
+            <g fill="white" opacity="0.65">
+              <circle cx="48" cy="48" r="2.5"/>
+              <circle cx="42" cy="90" r="2"/>
+              <circle cx="130" cy="55" r="2"/>
+              <circle cx="106" cy="38" r="1.8"/>
+              <circle cx="56" cy="30" r="2"/>
+            </g>
+
+          </g><!-- end clip -->
+
+        </svg>
+      </div>
+      <p class="hero-tagline">CONSTRUÍ LA MEJOR VERSIÓN DE VOS</p>
+      <button class="btn-primary" onclick="goTo('screen-goal')">COMENZAR</button>
+    </div>
+
+    <div class="chat-bubble-hint">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+        <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2Z"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- SCREEN 2: ELEGÍ TU META -->
+  <div id="screen-goal" class="screen">
+    <header class="top-bar">
+      <div class="logo-mark">
+        <svg width="28" height="28"><use href="#icon-logo"/></svg>
+        FUTURE ME
+      </div>
+    </header>
+
+    <div class="section-content">
+      <h2 class="section-title">ELEGÍ TU META</h2>
+      <div class="goal-options">
+        <button class="goal-btn" onclick="selectGoal(this, 'Ser Profesional', 'profesional')">
+          <span class="goal-icon">💼</span>
+          <span>SER PROFESIONAL</span>
+        </button>
+        <button class="goal-btn" onclick="selectGoal(this, 'Mejorar mis Estudios', 'estudios')">
+          <span class="goal-icon">📚</span>
+          <span>MEJORAR ESTUDIOS</span>
+        </button>
+        <button class="goal-btn" onclick="selectGoal(this, 'Crear mi Empresa', 'empresa')">
+          <span class="goal-icon">🚀</span>
+          <span>CREAR MI EMPRESA</span>
+        </button>
+        <button class="goal-btn goal-btn-otro" onclick="toggleOtro(this)">
+          <span class="goal-icon">✏️</span>
+          <span>OTRO</span>
+        </button>
+        <div id="otro-input-wrapper" class="otro-input-wrapper hidden">
+          <input type="text" id="otro-input" class="otro-input" placeholder="Escribí tu meta aquí..." maxlength="60" oninput="updateOtroGoal()" />
+        </div>
+      </div>
+      <button class="btn-primary btn-continue hidden" id="btn-continue-goal" onclick="continueToChat()">
+        CONTINUAR →
+      </button>
+    </div>
+  </div>
+
+  <!-- SCREEN 3: CHAT -->
+  <div id="screen-chat" class="screen">
+    <header class="top-bar chat-header">
+      <div class="chat-profile">
+        <div class="avatar-icon">
+          <svg width="22" height="22"><use href="#icon-logo"/></svg>
+        </div>
+        <div>
+          <div class="chat-name">FUTURE ME</div>
+          <div class="chat-subtitle" id="chat-goal-label">Tu versión del futuro</div>
+        </div>
+      </div>
+      <button class="btn-pill" onclick="goToMissions()">🎯 Misiones</button>
+    </header>
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-input-bar">
+      <input type="text" id="chat-input" class="chat-input" placeholder="Escribí tu mensaje..." onkeydown="if(event.key==='Enter') sendMessage()" />
+      <button class="btn-send" onclick="sendMessage()">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M2 21L23 12 2 3V10L17 12 2 14V21Z" fill="white"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- SCREEN 4: MISIONES DEL DÍA -->
+  <div id="screen-missions" class="screen">
+    <header class="top-bar">
+      <div class="logo-mark">
+        <svg width="28" height="28"><use href="#icon-logo"/></svg>
+        FUTURE ME
+      </div>
+      <button class="btn-pill" onclick="goTo('screen-map')">🗺️ Ver Mapa</button>
+    </header>
+    <div class="section-content">
+      <div class="missions-header">
+        <!-- ícono de target/objetivo -->
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="22" stroke="white" stroke-width="2"/>
+          <circle cx="24" cy="24" r="14" stroke="white" stroke-width="2"/>
+          <circle cx="24" cy="24" r="6"  stroke="white" stroke-width="2"/>
+          <circle cx="24" cy="24" r="2"  fill="white"/>
+        </svg>
+        <h2 class="section-title">MISIONES DEL DÍA</h2>
+        <p class="missions-goal-label">TU OBJETIVO ES: <span id="missions-goal-text"></span></p>
+      </div>
+      <div id="missions-list" class="missions-list"></div>
+      <button class="btn-primary btn-map" onclick="goTo('screen-map')">VER MAPA DE PROGRESO →</button>
+    </div>
+  </div>
+
+  <!-- SCREEN 5: MAPA DE PROGRESO -->
+  <div id="screen-map" class="screen">
+    <header class="top-bar">
+      <div class="logo-mark">
+        <svg width="28" height="28"><use href="#icon-logo"/></svg>
+        FUTURE ME
+      </div>
+      <button class="btn-pill" onclick="goTo('screen-missions')">🎯 Misiones</button>
+    </header>
+    <div class="section-content">
+      <h2 class="section-title">MAPA DE PROGRESO</h2>
+      <div class="map-container">
+        <div class="star-end" id="star-end">⭐</div>
+        <svg id="map-svg" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" class="map-svg"></svg>
+        <div id="map-nodes" class="map-nodes"></div>
+      </div>
+      <div class="map-legend">
+        <div class="map-legend-item"><div class="legend-dot pending"></div> Pendiente</div>
+        <div class="map-legend-item"><div class="legend-dot active"></div> Siguiente</div>
+        <div class="map-legend-item"><div class="legend-dot done"></div> Completado</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
